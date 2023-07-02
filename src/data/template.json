@@ -1,0 +1,58 @@
+{
+    "name":"",
+    "explanation":{
+        "basic":"",
+        "skill":"",
+        "ult":"",
+        "talent":"",
+        "technique":""
+    },
+
+    "needInfo":["atk","dmgbuff","speed","critrate","critdmg"],
+    
+    "skillName":["","","","",""],
+
+    "Skills":{
+        "basic":{
+            "name":"",
+            "ability":[""],
+            "ref":[""],
+            "table":[[]]
+        },
+        "skill":{
+            "name":"",
+            "ability":[""],
+            "ref":[""],
+            "table":[[]]
+        },
+        "ultimate":{
+            "name":"",
+            "ability":[""],
+            "ref":[""],
+            "table":[[]]
+        },
+        "talent":{
+            "name":"",
+            "ability":[""],
+            "ref":[""],
+            "table":[[]]
+        },
+        "technique":{
+            "name":"",
+            "ability":[""],
+            "rate":[]
+        }
+    },
+
+    "star":{
+        "1":"",
+        "2":"",
+        "4":"",
+        "6":""
+    },
+    "addbility":{
+        "shoukaku2":"",
+        "shoukaku4":"",
+        "shoukaku6":""
+    }
+}

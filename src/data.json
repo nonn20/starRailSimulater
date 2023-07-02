@@ -1,0 +1,10 @@
+{
+  "ver": "1.0.1",
+
+  "index":["Himeko","Welt","Bronya","Gepard","Clara","Yanqing","Bailu","Seele","March7th","DanHeng","Arlan","Asta","Herta","Serval","Natasha","Pela","Sampo","Hook","Qingque","Tingyun","Sushang"],
+
+  "comment-1":"ability=効果 ref=参照するもの target = 単体攻撃か拡散攻撃か、全体攻撃か kindbuff = バフの効果"
+  ,"comment":"abilityとrefの要素数は必ず一致させる"
+  ,"comment2":"techniqueはテーブルじゃなくて、固定値"
+  ,"ability":["atk","buff","debuff","heal","shield"]
+}
