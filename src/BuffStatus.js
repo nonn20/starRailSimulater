@@ -42,6 +42,46 @@ export function DisplayBuffs(){
   return (<div>{result}</div>);
 }
 
+export function DisplayDebuffs(){
+  let chara = buffs.deCharactor;
+  let buff = buffs.debuff;
+  let id = 0;
+  let tmp=[];
+  let resultTmp = [];
+  let result = [];
+
+  for(let i=0;i<chara.length;i++){
+    let nowChara = buff[i];
+    for(let j=0;j<buff[i].length;j++){
+      tmp.push(<>
+      <td><input type="checkbox" name={"debuffCheck"+i}></input></td>
+      <td><div>{nowChara[j].name}</div></td>
+      <td><div>{nowChara[j].kind_display}</div></td>
+      </>);
+      if(nowChara[j].level)
+        tmp.push(<td><input type="number" name={"debuffTenpu"+i} min="0" max="10" placeholder='Level'/></td>);
+      else
+      tmp.push(<td name={"debuffTenpu"+i}> </td>);
+      if(nowChara[j].lay)
+        tmp.push(<td><input type="number" name={"debuffLay"+i} max={nowChara[j].deepLay} min="0" placeholder='層'/></td>);
+      else
+        tmp.push(<td name={"debuffLay"+i}> </td>);
+      if(nowChara[j].ref!=="none")
+        tmp.push(<td><input type="text" name={"debuffRef"+i}  min="0" placeholder={nowChara[j].ref_display}/></td>);
+      else
+        tmp.push(<td name={"debuffRef"+i}> </td>);
+
+      resultTmp.push(<tr name={chara[i]} id={j}>{tmp}</tr>);
+      tmp = [];
+      id++;
+    }
+    result.push(<><table className="table table-striped"><thead><tr><th><div>{chara[i]}</div></th></tr></thead><tbody>{resultTmp}</tbody></table></>)
+    resultTmp = [];
+  }
+
+  return (<div>{result}</div>);
+}
+
 export function DisplayWeapons(){
   let select = document.getElementById("chara");
   let select1 = document.getElementById("weapon");
@@ -134,6 +174,7 @@ export function AddStatus(summary){
     }
   }
   let coneStatus = [];
+  //光円錐によるバフ
   if(selectWeapon.existEffect){
     let L = selectWeapon.effect.length;
     for(let i=0;i<L;i++){
@@ -147,7 +188,7 @@ export function AddStatus(summary){
         if(document.getElementById("weaponCheck").checked){
           ele = document.getElementsByName("weaponRadio");
           let lay;
-          for(lay=0;lay<selectWeapon.deepLay+1;lay++){
+          for(lay=0;lay<selectWeapon.deepLay+1;lay++){//何層かチェック
             if(ele[lay].checked)
               break;
             if(lay==selectWeapon.deepLay&&!ele[lay].checked){
@@ -156,7 +197,7 @@ export function AddStatus(summary){
             }
           }
 
-          tmp = summary[selectWeapon.effect[i]];
+          tmp = summary[selectWeapon.effect[i]];//効果をsummaryに加算
           let tmpTable = selectWeapon.table[i];
           if(selectWeapon.effect[i]!="atk")
             summary[selectWeapon.effect[i]] = Number(summary[selectWeapon.effect[i]])+ (tmpTable[star]*lay);
@@ -209,7 +250,7 @@ export function AddStatus(summary){
       }
     }
   }
-
+  //キャラによるバフ
   let chara = buffs.charactor;
   let data = buffs.buff;
   for(let i=0;i<chara.length;i++){
@@ -297,5 +338,61 @@ export function AddStatus(summary){
   summary.atk = Number(summary.atk)+Number(summary.baseAtk)*(atkAddPer/100);
   summary.def = Number(summary.def)+Number(summary.baseDef)*(defAddPer/100);
   summary.hp = Number(summary.hp)+Number(summary.baseHp)*(hpAddPer/100);
+
+  chara = buffs.deCharactor;
+  data = buffs.debuff;
+  for(let i=0;i<chara.length;i++){
+    let check,lay,tenpu,ref;
+    let data1 = data[i];
+    check = document.getElementsByName("debuffCheck"+i);
+    lay = document.getElementsByName("debuffLay"+i);
+    tenpu = document.getElementsByName("debuffTenpu"+i);
+    ref = document.getElementsByName("debuffRef"+i);
+    for(let j=0;j<data1.length;j++){
+      let data2 = data1[j];
+      let rate = 0;
+      if(check[j].checked){
+        if(data2.level){
+          rate = data2.table[Number(tenpu[j].value)];
+        }
+        else{
+          rate = data2.table;
+        }
+        if(data2.lay){
+          rate = Number(rate) * Number(lay[j].value);
+        }
+        if(data2.ref!="none"){
+          rate = Number(rate)/100 * Number(ref[j].value);
+        }
+        if(data2.mean == "real"){
+            summary[data2.kind] = Number(summary[data2.kind])+rate;
+        }
+        if(data2.mean == "per"){
+            summary[data2.kind] = Number(summary[data2.kind])*rate;
+        }
+        if(data2.table2!=undefined){
+          if(data2.level){
+            rate = data2.table2[Number(tenpu[j].value)];
+          }
+          else{
+            rate = data2.table2;
+          }
+          if(data2.lay){
+            rate = Number(rate) * Number(lay[j].value);
+          }
+          if(data2.ref!="none"){
+            rate = Number(rate)/100 * Number(ref[j].value);
+          }
+
+          if(data2.mean2 == "real"){
+              summary[data2.kind] = Number(summary[data2.kind])+rate;
+          }
+          if(data2.mean2 == "per"){
+              summary[data2.kind] = Number(summary[data2.kind])*rate;
+          }
+        }
+      }
+    }
+  }
   return summary;
 }

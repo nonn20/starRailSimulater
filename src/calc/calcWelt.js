@@ -16,7 +16,7 @@ export function calc(info){
   }
 
   /*追加能力*/
-  if(document.getElementById("add2").checked) debuff.bedmg+=12;
+  if(document.getElementById("add2").checked) info.bedmg+=12;
   if(document.getElementById("add6").checked) info.dmgbuff+=15;
 
   /*jsonとフォームから必要情報取得*/

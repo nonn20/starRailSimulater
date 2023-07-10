@@ -42,7 +42,7 @@ export function calc(info){
 
   if(star4!=null){
     if(star4.checked)
-      debuff.taisei = Number(debuff.taisei)+12;
+      info.taisei = Number(info.taisei)+12;
   }
 
   /*会心率調整*/

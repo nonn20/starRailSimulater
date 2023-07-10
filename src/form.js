@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import data from './data.json';
 import {DisplayBuffs} from './BuffStatus'
+import {DisplayDebuffs} from './BuffStatus'
 import {DisplayWeapons} from './BuffStatus'
 import {AddStatus} from './BuffStatus'
 //import {Calculate} from './App.js';
@@ -100,6 +101,7 @@ export function Form(){
       </form>
       <div>
         <DisplayBuffs onChange={gotoCalc} key={'buff'}/>
+        <DisplayDebuffs onChange={gotoCalc} key={'debuff'}/>
         <DisplayWeapons onChange={gotoCalc} key={'weapon'}/>
       </div>
       <div onChange={gotoCalc}>{result}</div>
@@ -130,6 +132,10 @@ export function Form(){
         err:document.getElementById("err").value,
         efHitRate:document.getElementById("efHitRate").value,
         efRES:document.getElementById("EfRES").value,
+        bedmg : 0,/*被ダメージアップ*/
+        defF : 0,/*防御ダウン*/
+        taisei: 0,/*耐性ダウン,貫通*/
+        bedmgJizoku:0,
         buffBasic: 0,
         buffSkill: 0,
         buffUlt: 0,
@@ -152,7 +158,7 @@ export function Form(){
     /*フォームをまとめる*/
     let summary = summaryState();
 
-    /*バフを追加*/
+    /*バフ・デバフを追加*/
     summary = AddStatus(summary);
 
     return loadImport(summary,id);

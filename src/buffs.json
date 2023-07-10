@@ -1,5 +1,6 @@
 {
   "charactor":["ブローニャ","アスター","停雲","百露"],
+  "deCharactor":["ヴェルト","銀狼","サンポ","ペラ"],
   "buff":[
     [
       {
@@ -132,6 +133,126 @@
         "ref":"none",
         "level":false,
         "table":10,
+        "mean":"real"
+      }
+    ]
+  ],
+  "debuff":[
+    [
+      {
+      "chara":0,
+      "name":"昇格2",
+      "kind_display":"被ダメージアップ",
+      "kind":"bedmg",
+      "lay":false,
+      "ref":"none",
+      "level":false,
+      "table":12,
+      "mean":"real"
+      }
+    ],
+    [
+      {
+        "chara":1,
+        "name":"戦闘スキル",
+        "kind_display":"耐性ダウン(確定)",
+        "kind":"taisei",
+        "lay":false,
+        "ref":"none",
+        "level":false,
+        "table":20,
+        "mean":"real"
+      },
+      {
+        "chara":1,
+        "name":"戦闘スキル",
+        "kind_display":"耐性ダウン(確率)",
+        "kind":"taisei",
+        "lay":false,
+        "ref":"none",
+        "level":true,
+        "table":[7.5,7.7,8.0,8.2,8.5,8.7,9.0,9.3,9.6,10],
+        "mean":"real"
+      },
+      {
+        "chara":1,
+        "name":"必殺技",
+        "kind_display":"防御ダウン",
+        "kind":"defF",
+        "lay":false,
+        "ref":"none",
+        "level":true,
+        "table":[36,36.9,37.8,38.7,39.6,40,41.6,42.7,43.8,45],
+        "mean":"real"
+      },
+      {
+        "chara":1,
+        "name":"天賦",
+        "kind_display":"防御ダウン",
+        "kind":"defF",
+        "lay":false,
+        "ref":"none",
+        "level":true,
+        "table":[4,4.4,4.8,5.2,5.6,6,6.5,7,7.5,8],
+        "mean":"real"
+      },
+      {
+        "chara":1,
+        "name":"昇格6",
+        "kind_display":"耐性ダウン",
+        "kind":"taisei",
+        "lay":false,
+        "ref":"none",
+        "level":false,
+        "table":3,
+        "mean":"real"
+      }
+    ],
+    [
+      {
+        "chara":2,
+        "name":"必殺技",
+        "kind_display":"持続被ダメージアップ",
+        "kind":"bedmgJizoku",
+        "lay":false,
+        "ref":"none",
+        "level":true,
+        "table":[20,2122,23,24,25,26,27,28,30],
+        "mean":"real"
+      }
+    ],
+    [
+      {
+        "chara":3,
+        "name":"必殺技",
+        "kind_display":"防御ダウン",
+        "kind":"defF",
+        "lay":false,
+        "ref":"none",
+        "level":true,
+        "table":[30,31,32,33,34,35,36,37,38,40],
+        "mean":"real"
+      },
+      {
+        "chara":3,
+        "name":"星魂4",
+        "kind_display":"防御ダウン",
+        "kind":"defF",
+        "lay":false,
+        "ref":"none",
+        "level":false,
+        "table":12,
+        "mean":"real"
+      },
+      {
+        "chara":3,
+        "name":"秘技",
+        "kind_display":"防御ダウン",
+        "kind":"defF",
+        "lay":false,
+        "ref":"none",
+        "level":false,
+        "table":20,
         "mean":"real"
       }
     ]

@@ -32,7 +32,7 @@ export function calc(info){
     if(select1.checked){
       info.dmgbuff = Number(info.dmgbuff)+talent[0];
       if(add4.checked)
-        debuff.taisei = Number(debuff.taisei)+20;
+        info.taisei = Number(info.taisei)+20;
     }
   }
 

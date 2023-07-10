@@ -37,7 +37,7 @@ export function calc(info){
   let select1 = document.getElementById("talentSelect");
   if(select1 != null){
     if(select1.checked)
-      debuff.taisei += talent[0];
+      info.taisei += talent[0];
   }
 
 
