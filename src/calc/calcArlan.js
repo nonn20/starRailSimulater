@@ -130,10 +130,10 @@ export function calc(info){
 
   let addSelect =[];
   if(star >= 1){
-    addSelect.push(<>1凸効果:残りHPが50%以下の敵に対する戦闘スキルの与ダメージ+10%。<input type="checkbox" id="star1"></input></>);
+    addSelect.push(<>1凸効果:残りHPが50%以下の敵に対する戦闘スキルの与ダメージ+10%。<input class="form-check-input" type="checkbox" id="star1"></input></>);
   }
   if(star >= 6){
-    addSelect.push(<>6凸効果:残りHPが50%以下の時、必殺技の与ダメージ+20%、隣接する敵へのダメージ倍率がメインターゲットと同じになる。<input type="checkbox" id="star6"></input></>);
+    addSelect.push(<>6凸効果:残りHPが50%以下の時、必殺技の与ダメージ+20%、隣接する敵へのダメージ倍率がメインターゲットと同じになる。<input class="form-check-input" type="checkbox" id="star6"></input></>);
   }
   result.push(addSelect);
 

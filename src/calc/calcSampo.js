@@ -117,7 +117,7 @@ export function calc(info){
 
   let addSelect =[];
   if(star >= 6){
-    addSelect.push(<>6凸効果:天賦が付与した風化状態の持続ダメージ倍率+15%<input type="checkbox" id="star6"></input></>);
+    addSelect.push(<>6凸効果:天賦が付与した風化状態の持続ダメージ倍率+15%<input class="form-check-input" type="checkbox" id="star6"></input></>);
   }
   result.push(addSelect);
 

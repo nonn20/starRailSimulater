@@ -122,7 +122,7 @@ export function calc(info){
 
   let addSelect =[];
   if(star >= 1){
-    addSelect[0] = <>1凸効果:通常攻撃を行った時、指定した敵単体の残りHPが50%以下の場合、さらにヘルタの攻撃力40%分の氷属性付加ダメージを与える。<input type="checkbox" id="star1"></input></>
+    addSelect[0] = <>1凸効果:通常攻撃を行った時、指定した敵単体の残りHPが50%以下の場合、さらにヘルタの攻撃力40%分の氷属性付加ダメージを与える。<input class="form-check-input" type="checkbox" id="star1"></input></>
     if(star >= 2)
       addSelect.push(<div>2凸効果:天賦が1回発動するごとに、自身の会心率+3%、最大で5回累積できる。
       <input type="radio"  name="star2" id="star2" value="0"/>0
@@ -133,7 +133,7 @@ export function calc(info){
       <input type="radio"  name="star2" id="star2" value="5"/>5
       </div>);
     if(star >= 4)
-      addSelect.push(<>4凸効果:天賦発動時の与ダメージ+10%<input type="checkbox" id="star4"></input></>);
+      addSelect.push(<>4凸効果:天賦発動時の与ダメージ+10%<input class="form-check-input" type="checkbox" id="star4"></input></>);
   }
   result.push(addSelect);
 

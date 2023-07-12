@@ -116,7 +116,7 @@ export function calc(info){
 
   let addSelect =[];
   if(star >= 6){
-    addSelect.push(<>感電状態の敵に対するセーバルの与ダメージ+30%<input type="checkbox" id="star6"/></>);
+    addSelect.push(<>感電状態の敵に対するセーバルの与ダメージ+30%<input class="form-check-input" type="checkbox" id="star6"/></>);
   }
   result.push(addSelect);
 

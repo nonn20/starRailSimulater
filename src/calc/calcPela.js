@@ -113,7 +113,7 @@ export function calc(info){
 
   let addSelect =[];
   if(star >= 1){
-    addSelect.push(<>6凸効果:攻撃を行った後、敵がデバフ状態の場合、氷属性付加ダメージを与える<input type="checkbox" id="star1"></input></>);
+    addSelect.push(<>6凸効果:攻撃を行った後、敵がデバフ状態の場合、氷属性付加ダメージを与える<input class="form-check-input" type="checkbox" id="star1"></input></>);
   }
   result.push(addSelect);
 

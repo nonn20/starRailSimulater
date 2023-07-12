@@ -118,9 +118,9 @@ export function calc(info){
   ]
 
   let addSelect =[];
-  addSelect[0] = <>天賦：丹恒が味方スキルのターゲットになった時、次の攻撃の風属性耐性貫通を得る<input type="checkbox" id="talentSelect"></input></>
+  addSelect[0] = <>天賦：丹恒が味方スキルのターゲットになった時、次の攻撃の風属性耐性貫通を得る<input class="form-check-input" type="checkbox" id="talentSelect"></input></>
   if(star >= 1){
-    addSelect.push(<>1凸効果:攻撃した敵の残りHPが50%以上の場合、会心率+12%<input type="checkbox" id="star1"></input></>);
+    addSelect.push(<>1凸効果:攻撃した敵の残りHPが50%以上の場合、会心率+12%<input class="form-check-input" type="checkbox" id="star1"></input></>);
   }
   result.push(addSelect);
 

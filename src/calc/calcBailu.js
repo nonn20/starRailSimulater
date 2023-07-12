@@ -115,7 +115,7 @@ export function calc(info){
 
   let addSelect =[];
   if(star >= 2){
-    addSelect.push(<>2凸効果:必殺技を発動した後、白露の治癒量+15%<input type="checkbox" id="star2"></input></>);
+    addSelect.push(<>2凸効果:必殺技を発動した後、白露の治癒量+15%<input class="form-check-input" type="checkbox" id="star2"></input></>);
   }
   result.push(addSelect);
 

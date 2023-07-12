@@ -137,13 +137,13 @@ export function calc(info){
   ]
 
   let addSelect =[];
-  addSelect[0] = <>天賦:残りHPが30%以下の味方に治癒を行う時、治癒量アップ<input type="checkbox" id="talentSelect"></input></>
+  addSelect[0] = <>天賦:残りHPが30%以下の味方に治癒を行う時、治癒量アップ<input class="form-check-input" type="checkbox" id="talentSelect"></input></>
   if(star >= 1){
-    addSelect.push(<>1凸効果:攻撃を受けた後、残りHPが30%以下の場合、自身に治癒を1回行う<input type="checkbox" id="star1"></input></>);
+    addSelect.push(<>1凸効果:攻撃を受けた後、残りHPが30%以下の場合、自身に治癒を1回行う<input class="form-check-input" type="checkbox" id="star1"></input></>);
     if(star >= 2)
-      addSelect.push(<>2凸効果:必殺技を発動した時、残りHPが30%以下の味方に1ターン継続する持続治癒効果を付与する。<input type="checkbox" id="star2"></input></>);
+      addSelect.push(<>2凸効果:必殺技を発動した時、残りHPが30%以下の味方に1ターン継続する持続治癒効果を付与する。<input class="form-check-input" type="checkbox" id="star2"></input></>);
     if(star >= 6)
-      addSelect.push(<>6凸効果:通常攻撃を行った時、追加ダメージを与える<input type="checkbox" id="star6"></input></>);
+      addSelect.push(<>6凸効果:通常攻撃を行った時、追加ダメージを与える<input class="form-check-input" type="checkbox" id="star6"></input></>);
   }
   result.push(addSelect);
 

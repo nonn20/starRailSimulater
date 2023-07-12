@@ -112,9 +112,9 @@ export function calc(info){
   ]
 
   let addSelect =[];
-  addSelect[0] = <>必殺技を発動した後、次に発動する戦闘スキルを強化する<input type="checkbox" id="talentSelect"></input></>
+  addSelect[0] = <>必殺技を発動した後、次に発動する戦闘スキルを強化する<input class="form-check-input" type="checkbox" id="talentSelect"></input></>
   if(star >= 1){
-    addSelect.push(<>6凸効果:燃焼状態の敵に対するフックの与ダメージ+20%<input type="checkbox" id="star6"></input></>);
+    addSelect.push(<>6凸効果:燃焼状態の敵に対するフックの与ダメージ+20%<input class="form-check-input" type="checkbox" id="star6"></input></>);
   }
   result.push(addSelect);
 

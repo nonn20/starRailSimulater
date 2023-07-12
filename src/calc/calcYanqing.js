@@ -156,10 +156,10 @@ export function calc(info){
   ]
 
   let addSelect =[];
-  addSelect.push(<>智剣連心<input type="checkbox" id="select1"></input></>);
-  addSelect.push(<>秘技:次の戦闘開始時、残りHPが50%以上の敵に対して、与ダメージ+30%<input type="checkbox" id="hitugi"></input></>)
+  addSelect.push(<>智剣連心<input class="form-check-input" type="checkbox" id="select1"></input></>);
+  addSelect.push(<>秘技:次の戦闘開始時、残りHPが50%以上の敵に対して、与ダメージ+30%<input class="form-check-input" type="checkbox" id="hitugi"></input></>)
   if(star >= 4){
-    addSelect.push(<>4凸効果:自身の残りHPが80%以上の時、自身の氷属性耐性貫通+12%。<input type="checkbox" id="star4"></input></>);
+    addSelect.push(<>4凸効果:自身の残りHPが80%以上の時、自身の氷属性耐性貫通+12%。<input class="form-check-input" type="checkbox" id="star4"></input></>);
   }
 
   result.push(addSelect);

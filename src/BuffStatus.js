@@ -14,7 +14,7 @@ export function DisplayBuffs(){
     let nowChara = buff[i];
     for(let j=0;j<buff[i].length;j++){
       tmp.push(<>
-      <td><input type="checkbox" name={"buffCheck"+i}></input></td>
+      <td><input class="form-check-input" type="checkbox" name={"buffCheck"+i}></input></td>
       <td><div>{nowChara[j].name}</div></td>
       <td><div>{nowChara[j].kind_display}</div></td>
       </>);
@@ -54,7 +54,7 @@ export function DisplayDebuffs(){
     let nowChara = buff[i];
     for(let j=0;j<buff[i].length;j++){
       tmp.push(<>
-      <td><input type="checkbox" name={"debuffCheck"+i}></input></td>
+      <td><input class="form-check-input" type="checkbox" name={"debuffCheck"+i}></input></td>
       <td><div>{nowChara[j].name}</div></td>
       <td><div>{nowChara[j].kind_display}</div></td>
       </>);
@@ -123,7 +123,7 @@ export function DisplayWeapons(){
   let con = selectWeapon.con;
   if(con!=undefined){
     for(let i=0;i<con.length;i++){//条件チェックボックス
-        selectResult.push(<div>{selectWeapon.con[i]}<input type="checkbox" id="weaponCheck"></input></div>)
+        selectResult.push(<div>{selectWeapon.con[i]}<input class="form-check-input" type="checkbox" id="weaponCheck"></input></div>)
     }
   }
 

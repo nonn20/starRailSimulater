@@ -120,12 +120,12 @@ export function calc(info){
   ]
 
   let addSelect =[];
-  addSelect.push(<>増幅状態<input type="checkbox" id="select1"></input></>);
+  addSelect.push(<>増幅状態<input class="form-check-input" type="checkbox" id="select1"></input></>);
   if(star >= 1){
-    addSelect.push(<>1凸効果:残りHPが80%以下の敵にダメージを与える時、会心率+15%。<input type="checkbox" id="star1"></input></>);
+    addSelect.push(<>1凸効果:残りHPが80%以下の敵にダメージを与える時、会心率+15%。<input class="form-check-input" type="checkbox" id="star1"></input></>);
   }
   if(star>=6){
-    addSelect.push(<>6凸効果:乱れ蝶状態の敵が攻撃を受けた後、ゼーレの必殺技ダメージ15%分の量子属性付加ダメージを1回受ける。<input type="checkbox" id="star6"></input></>);
+    addSelect.push(<>6凸効果:乱れ蝶状態の敵が攻撃を受けた後、ゼーレの必殺技ダメージ15%分の量子属性付加ダメージを1回受ける。<input class="form-check-input" type="checkbox" id="star6"></input></>);
   }
   result.push(addSelect);
 
