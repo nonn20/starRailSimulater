@@ -1,13 +1,8 @@
-
-/*敵情報*/
-let zinsei = false;
-let level = 51;
-let taisei = 0;
 /*info キャラステータス
 basic 基礎ダメージ
 debuff  デバフ値一覧*/
 export const calcEnemy=(info,basic,act)=> {
-
+  let zinsei = info.zinsei,level = info.Elevel,taisei = info.taiseiE;
   let zinseiE = zinsei ? 0.9: 1;
   let result;
 

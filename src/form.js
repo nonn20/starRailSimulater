@@ -13,6 +13,8 @@ export function Form(){
   const [traceUlt,setUlt] = useState(1);
   const [traceTalent,setTalent] = useState(1);
   const [result,setResult] = useState();
+  const [Elevel,setElevel] = useState(90);
+  const [level,setLevel] = useState(90);
 
   return(
     <div className="d-flex flex-row justify-content-between" onChange={gotoCalc}>
@@ -45,11 +47,11 @@ export function Form(){
 
         <div id="status">
           <div>レベル</div>
-            <input type="text" id="level"></input>
+            <input type="text" id="level" value = {level}onChange={function(e){setLevel(e.target.value);}} ></input>
           <div>基礎HP</div>
             <input type="text" id="baseHp" placeholder='HP'></input>
           <div>HP</div>
-            <input type="text" id="hp" placeholder='HP'></input>
+            <input type="text" id="hp" placeholder='HP' ></input>
           <div>基礎攻撃力</div>
             <input type="text" id="baseAtk"></input>
           <div>攻撃力</div>
@@ -76,6 +78,13 @@ export function Form(){
             <input type="text" id="efHitRate"></input>
           <div>効果抵抗</div>
             <input type="text" id="EfRES"></input>
+          <br></br>
+          <div>靭性</div>
+            <input type="checkbox" id="zinsei"></input>
+          <div>敵レベル</div>
+            <input type="text" id="Elevel" value = {Elevel}onChange={function(e){setElevel(e.target.value);}} ></input>
+          <div>敵耐性</div>
+            <input type="text" id="Etaisei"></input>
 
           <p>軌跡Lvl</p>
           <div>通常攻撃</div>
@@ -96,7 +105,7 @@ export function Form(){
           <div>昇格6</div>
           <input type="checkbox" id="add6"></input>
           <div>星魂Level</div>
-          <input type="text" id="star"></input>
+          <input type="number" min="0" max="6" id="star"></input>
         </div>
       </form>
       <div>
@@ -132,6 +141,7 @@ export function Form(){
         err:document.getElementById("err").value,
         efHitRate:document.getElementById("efHitRate").value,
         efRES:document.getElementById("EfRES").value,
+
         bedmg : 0,/*被ダメージアップ*/
         defF : 0,/*防御ダウン*/
         taisei: 0,/*耐性ダウン,貫通*/
@@ -146,7 +156,11 @@ export function Form(){
         bedmg : 0,/*被ダメージアップ*/
         defF : 0,/*防御ダウン*/
         taisei: 0,/*耐性ダウン,貫通*/
-        ultCritdmg: 0//必殺技の会心ダメージ
+        ultCritdmg: 0,//必殺技の会心ダメージ
+
+        zinsei:document.getElementById("zinsei").checked,
+        Elevel:Number(document.getElementById("Elevel").value),
+        taiseiE:Number(document.getElementById("Etaisei").value)
       };
       return summary;
     }
